@@ -16,7 +16,7 @@ async function uploadFileToS3(file, fileName){
     
     const params = {
       Bucket: process.env.NEXT_PUBLIC_AWS_S3_BUCKET_NAME,
-      key: `${fileName}-${Date.now()}`,
+      Key: `exerciseApp/${fileName}-${Date.now()}`,
       Body: fileBuffer,
       ContentType: "image/jpeg"
     }

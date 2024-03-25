@@ -19,7 +19,7 @@ export async function POST(req: NextRequest) {
     const binaryData = Buffer.from(base64Data, 'base64');
 
     const params = {
-      Bucket: process.env.NEXT_PUBLIC_AWS_S3_BUCKET_NAME || '',
+      Bucket: process.env.S3_BUCKET_NAME || 'mys3database',
       Key: `images/${uuidv4()}`, // S3에 저장될 파일 이름
       Body: binaryData,
       ContentType: 'image/jpeg', // 이미지 형식에 따라 조절
