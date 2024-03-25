@@ -9,7 +9,7 @@ export async function GET() {
     );
     conn.release();
 
-    console.log(rows)
+    console.log([rows])
     // if (!Array.isArray(rows)) {
     //   throw new Error("Rows is not an array");
     // }

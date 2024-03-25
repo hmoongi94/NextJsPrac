@@ -26,7 +26,7 @@ async function uploadFileToS3(file: Buffer, fileName: string): Promise<string> {
   const command = new PutObjectCommand(params);
   await s3Client.send(command);
 
-  const imageUrl = `https://${process.env.NEXT_PUBLIC_AWS_S3_BUCKET_NAME}.s3.${process.env.NEXT_PUBLIC_AWS_S3_REGION}.amazonaws.com/exerciseApp/${params.Key}`; // S3에 업로드된 이미지의 URL
+  const imageUrl = `https://${process.env.NEXT_PUBLIC_AWS_S3_BUCKET_NAME}.s3.${process.env.NEXT_PUBLIC_AWS_S3_REGION}.amazonaws.com/${params.Key}`; // S3에 업로드된 이미지의 URL
   return imageUrl;
 }
 
