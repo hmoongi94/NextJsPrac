@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useState, useEffect } from "react";
 import ImageDisplay from "@/app/components/Imagedisplay";
 
@@ -8,10 +10,11 @@ const App = () => {
   useEffect(() => {
     async function fetchImageUrls() {
       try {
-        const response = await fetch("/api/getImageUrls");
+        const response = await fetch("/api/getImageUrl");
         const data = await response.json();
         if (data.success) {
           setImageUrls(data.imageUrls);
+          // console.log(data.imageUrls)
         }
       } catch (error) {
         console.error("Error fetching image URLs", error);
